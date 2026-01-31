@@ -1,26 +1,6 @@
-/* =========================================================
-   BLUELINEKICKS12 — MASTER SITE STYLE (ALL PAGES)
-   - Dark but bright
-   - Blueline blue + white
-   - Floating shoe borders (desktop)
-   - Home page background logo overlay @ 75% opacity
-   - Alternating black/white sections
-   - Graffiti vibe headings + clean readable body
-   - Video embed styling
-   ========================================================= */
-
-/* OPTIONAL (Recommended): Put this in <head> on EVERY PAGE
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
-*/
-
-/* =======================
-   THEME VARIABLES
-   ======================= */
 :root{
-  --blueline:#1E90FF;         /* bright blueline blue */
-  --blueline2:#0A5CFF;        /* deeper electric blue */
+  --blueline:#1E90FF;
+  --blueline2:#0A5CFF;
   --black:#05070C;
   --dark:#070E1B;
   --dark2:#0A1630;
@@ -35,7 +15,319 @@
 
   --max:1120px;
 
-  /* floating shoe border config */
-  --sideWidth:260px;          /* make shoes obvious */
-  --sideOpacity:.86;          /* visible */
+  --sideWidth:260px;
+  --sideOpacity:.86;
   --sideGlow: drop-shadow(0 0 20px rgba(30,144,255,.30));
+  --sideBlend: screen;
+
+  --font-body:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-graffiti:"Rubik Spray Paint", system-ui, sans-serif;
+}
+
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background:
+    radial-gradient(1200px 800px at 18% 12%, rgba(30,144,255,.22), transparent 62%),
+    radial-gradient(900px 700px at 86% 78%, rgba(10,92,255,.18), transparent 66%),
+    linear-gradient(180deg, var(--dark2) 0%, var(--dark) 62%, #050A14 100%);
+}
+
+.site-page{
+  background: var(--black);
+  min-height:100vh;
+}
+
+.page{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+}
+
+header, nav, main, footer, section{
+  position:relative;
+  z-index:1;
+}
+
+.page::before,
+.page::after{
+  content:"";
+  position:fixed;
+  top:0;
+  width: var(--sideWidth);
+  height:100vh;
+  pointer-events:none;
+  opacity: var(--sideOpacity);
+  z-index:0;
+  background-repeat: repeat;
+  background-size: var(--sideWidth) auto;
+  background-position: center top;
+  filter: var(--sideGlow);
+  mix-blend-mode: var(--sideBlend);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.page::before{
+  left:0;
+  background-image:url("assets/img/shoes-border-left.png");
+}
+
+.page::after{
+  right:0;
+  background-image:url("assets/img/shoes-border-right.png");
+}
+
+.wrap{
+  width: min(var(--max), calc(100% - (var(--sideWidth) * 2) - 40px));
+  margin:0 auto;
+  padding:0 20px;
+}
+
+.home-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+}
+
+.home-bg::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url("assets/img/4E62968F-6A26-4E3D-8AE3-B05EE9B0BB82.png");
+  background-size: cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:.75;
+}
+
+.home-bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(720px 520px at 50% 35%, rgba(30,144,255,.28), transparent 65%),
+    linear-gradient(180deg, rgba(0,0,0,.40) 0%, rgba(0,0,0,.72) 60%, rgba(0,0,0,.88) 100%);
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  backdrop-filter: blur(12px);
+  background: linear-gradient(180deg, rgba(7,14,27,.86) 0%, rgba(7,14,27,.55) 100%);
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+.nav-inner{
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.nav-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:900;
+  letter-spacing:.04em;
+}
+
+.nav-brand img{
+  width:46px;
+  height:46px;
+  object-fit:contain;
+  filter: drop-shadow(0 0 14px rgba(30,144,255,.35));
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.nav-links a{
+  color: rgba(255,255,255,.92);
+  text-decoration:none;
+  font-weight:800;
+  padding:10px 10px;
+  border-radius:10px;
+  transition: background .18s ease, transform .18s ease;
+}
+
+.nav-links a:hover{
+  background: rgba(255,255,255,.08);
+  transform: translateY(-1px);
+}
+
+.divider{
+  height:4px;
+  width:100%;
+  background: linear-gradient(90deg, transparent, var(--blueline), transparent);
+  opacity:.95;
+}
+
+.section-black{
+  background: rgba(0,0,0,.55);
+  padding: 44px 0;
+}
+
+.section-white{
+  background: rgba(255,255,255,.96);
+  padding: 44px 0;
+  color: var(--ink);
+}
+
+.section-white a,
+.section-white p,
+.section-white h1,
+.section-white h2,
+.section-white h3{
+  color: var(--ink);
+}
+
+.hero{
+  padding: 46px 0 34px;
+  text-align:center;
+}
+
+.brand-logo{
+  width: min(340px, 76vw);
+  height:auto;
+  margin: 0 auto 14px;
+  display:block;
+  filter: drop-shadow(0 0 22px rgba(30,144,255,.45));
+}
+
+.hero-title{
+  margin:0;
+  font-family: var(--font-graffiti);
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  line-height:1.06;
+  text-shadow: 0 0 22px rgba(30,144,255,.18);
+}
+
+.hero-sub{
+  margin: 14px auto 22px;
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.section-title{
+  margin:0 0 14px;
+  font-family: var(--font-graffiti);
+  text-transform: uppercase;
+  letter-spacing:.06em;
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+}
+
+p{ margin: 0 0 14px; }
+
+.btn-primary,
+.btn-ghost{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 14px 30px;
+  border-radius: 14px;
+  text-decoration:none;
+  font-weight: 900;
+  letter-spacing:.05em;
+  text-transform: uppercase;
+  font-family: var(--font-graffiti);
+  border:1px solid rgba(255,255,255,.14);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.btn-primary{
+  color:#fff;
+  background: linear-gradient(135deg, var(--blueline2), var(--blueline));
+  box-shadow: 0 0 30px rgba(30,144,255,.40);
+}
+
+.btn-primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 0 48px rgba(30,144,255,.60);
+}
+
+.btn-ghost{
+  color:#fff;
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(12px);
+}
+
+.btn-ghost:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.14);
+}
+
+.card{
+  background: var(--panel);
+  border: 1px solid var(--panelBorder);
+  border-radius: 18px;
+  padding: 18px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 26px rgba(30,144,255,.10);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.col-4{ grid-column: span 4; }
+.col-6{ grid-column: span 6; }
+.col-12{ grid-column: span 12; }
+
+@media (max-width: 980px){
+  .col-4, .col-6{ grid-column: span 12; }
+}
+
+.video-frame{
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.14);
+  overflow:hidden;
+  box-shadow: 0 0 30px rgba(30,144,255,.18);
+}
+
+.video-frame iframe,
+.video-frame video{
+  width:100%;
+  height:100%;
+  display:block;
+  border:0;
+}
+
+footer{
+  padding: 30px 0 44px;
+  border-top:1px solid rgba(255,255,255,.10);
+  background: rgba(7,14,27,.45);
+  color: rgba(255,255,255,.75);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 900px){
+  .page::before, .page::after{ display:none; }
+  .wrap{ width: min(var(--max), 100%); }
+  .hero{ padding: 38px 0 26px; }
+  .brand-logo{ width: min(300px, 84vw); }
+}
+
+input, textarea, select, button{
+  font-family: var(--font-body);
+}
