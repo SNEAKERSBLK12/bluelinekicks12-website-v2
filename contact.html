@@ -1,3 +1,124 @@
-<form name="contact" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="contact"/>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contact | Bluelinekicks12</title>
+  <meta name="description" content="Contact Bluelinekicks12. Questions, offers, and sneaker deals—reach out anytime."/>
+  <link rel="icon" type="image/png" href="assets/img/logo.png"/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-logo"><img src="assets/img/logo.png" alt="Bluelinekicks12 logo"/></span>
+          <span class="brand-text">BLUELINEKICKS12<small>Buy • Sell • Trade</small></span>
+        </a>
+
+        <nav id="navlinks" class="nav-links">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="inventory.html">Inventory</a>
+          <a data-nav href="sell.html">Sell Us Your Shoes</a>
+          <a data-nav href="about.html">About</a>
+          <a data-nav href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn primary" href="inventory.html">Shop Whatnot</a>
+          <a class="btn" href="sell.html">Get an Offer</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card">
+            <div class="kicker">Contact</div>
+            <h1 class="h1">Hit us up</h1>
+            <p class="lead">
+              Questions about a pair? Want a bundle deal? Need a fast offer?
+              Send a message and we’ll respond ASAP.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="https://www.whatnot.com/user/bluelinekicks12" target="_blank" rel="noopener">Whatnot</a>
+              <a class="btn" href="sell.html">Sell Shoes</a>
+            </div>
+          </div>
+
+          <div class="card" style="padding:0;overflow:hidden">
+            <img src="assets/img/logo-collage.png" alt="Bluelinekicks12 brand collage"/>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="grid">
+            <div class="span-8 card">
+              <h2>Send a message</h2>
+              <form name="contact" method="POST" data-netlify="true" data-toast>
+                <input type="hidden" name="form-name" value="contact"/>
+
+                <label for="cname">Name</label>
+                <input id="cname" class="input" name="name" required placeholder="Your name"/>
+
+                <label for="cemail">Email</label>
+                <input id="cemail" class="input" type="email" name="email" required placeholder="you@email.com"/>
+
+                <label for="cmsg">Message</label>
+                <textarea id="cmsg" class="input" name="message" required placeholder="What can we help with?"></textarea>
+
+                <div class="form-actions">
+                  <button class="btn primary" type="submit">Send</button>
+                  <a class="btn" href="inventory.html">See Inventory</a>
+                </div>
+
+                <p class="note" style="margin-top:10px">Forms are collected by Netlify once deployed.</p>
+              </form>
+            </div>
+
+            <div class="span-4 card">
+              <h2>Quick links</h2>
+              <div class="note"><strong>Whatnot:</strong> <a href="https://www.whatnot.com/user/bluelinekicks12" target="_blank" rel="noopener">whatnot.com/user/bluelinekicks12</a></div>
+              <div class="hr"></div>
+              <div class="note">
+                Want your Facebook link here? Send it and I’ll add it across the site.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="badge">© <span id="year"></span> Bluelinekicks12</div>
+          <div class="note" style="margin-top:10px;max-width:520px">
+            Built for sneakerheads who want real heat and real prices.
+          </div>
+        </div>
+        <div>
+          <div style="font-weight:900;margin-bottom:8px">Links</div>
+          <div class="note"><a href="inventory.html">Inventory</a></div>
+          <div class="note"><a href="sell.html">Sell Us Your Shoes</a></div>
+          <div class="note"><a href="contact.html">Contact</a></div>
+        </div>
+      </div>
+      <div class="glowline"></div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/site.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
 
