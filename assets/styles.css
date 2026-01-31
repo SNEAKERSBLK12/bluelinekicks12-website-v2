@@ -1,285 +1,41 @@
+/* =========================================================
+   BLUELINEKICKS12 — MASTER SITE STYLE (ALL PAGES)
+   - Dark but bright
+   - Blueline blue + white
+   - Floating shoe borders (desktop)
+   - Home page background logo overlay @ 75% opacity
+   - Alternating black/white sections
+   - Graffiti vibe headings + clean readable body
+   - Video embed styling
+   ========================================================= */
+
+/* OPTIONAL (Recommended): Put this in <head> on EVERY PAGE
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+*/
+
+/* =======================
+   THEME VARIABLES
+   ======================= */
 :root{
-  --bg0:#070E1B;           /* deep navy (not too dark) */
-  --bg1:#0A1630;           /* brighter dark */
-  --blue:#0A5CFF;
-  --blue2:#2BA0FF;
-  --text:#ffffff;
-  --card:rgba(255,255,255,.06);
-  --cardBorder:rgba(255,255,255,.10);
-}
-
-body{
-  margin:0;
-  color:var(--text);
-  background:
-    radial-gradient(1200px 800px at 20% 15%, rgba(43,160,255,.18), transparent 65%),
-    radial-gradient(1200px 800px at 80% 75%, rgba(10,92,255,.16), transparent 70%),
-    linear-gradient(180deg, var(--bg1) 0%, var(--bg0) 60%, #050A14 100%);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-}
-
-/* Page container */
-.page{
-  position:relative;
-  min-height:100vh;
-  overflow:hidden;
-}
-
-/* Floating shoe borders (desktop) */
-.page::before,
-.page::after{
-  content:"";
-  position:fixed;
-  top:0;
-  width:220px;
-  height:100vh;
-  pointer-events:none;
-  opacity:.55;
-  filter: drop-shadow(0 0 18px rgba(43,160,255,.35));
-  mix-blend-mode:screen;
-  z-index:0;
-  background-repeat:repeat;
-  background-size:220px auto;
-  background-position:center top;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
-}
-
-/* Put your “floating shoes collage” images here */
-.page::before{ left:0;  background-image:url('assets/img/shoes-border-left.png'); }
-.page::after { right:0; background-image:url('assets/img/shoes-border-right.png'); }
-
-/* Main content stays above borders */
-main, header, nav, footer{ position:relative; z-index:1; }
-
-/* HERO */
-.hero{
-  position:relative;
-  min-height:78vh;                 /* BIGGER BANNER */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:90px 20px 70px;
-  overflow:hidden;
-}
-
-.hero-home{
-  background-image: var(--hero-img);
-  background-size:cover;
-  background-position:center;
-}
-
-/* Overlay makes it readable + adds glow (bright dark) */
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(700px 500px at 50% 40%, rgba(43,160,255,.28), transparent 65%),
-    linear-gradient(180deg, rgba(7,14,27,.35) 0%, rgba(7,14,27,.70) 55%, rgba(7,14,27,.88) 100%);
-  backdrop-filter: blur(1.5px);
-}
-
-.hero-inner{
-  position:relative;
-  max-width:980px;
-  margin:auto;
-}
-
-/* Larger logo at the top */
-.brand-logo{
-  width:min(520px, 78vw);
-  height:auto;
-  margin:0 auto 20px;
-  filter: drop-shadow(0 0 28px rgba(43,160,255,.45));
-}
-
-.hero-title{
-  margin:0;
-  font-size: clamp(2.2rem, 4.2vw, 4rem);
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  text-shadow: 0 0 22px rgba(43,160,255,.18);
-}
-
-.hero-sub{
-  margin:14px auto 28px;
-  max-width:720px;
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
-  opacity:.95;
-}
-
-.hero-cta{
-  display:flex;
-  gap:14px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.btn-primary{
-  background: linear-gradient(135deg, var(--blue), var(--blue2));
-  color:#fff;
-  padding:14px 30px;
-  border-radius:12px;
-  font-weight:800;
-  text-decoration:none;
-  box-shadow: 0 0 28px rgba(43,160,255,.35);
-  border:1px solid rgba(255,255,255,.12);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
-.btn-primary:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 0 42px rgba(43,160,255,.55);
-}
-
-.btn-ghost{
-  background: rgba(255,255,255,.06);
-  color:#fff;
-  padding:14px 30px;
-  border-radius:12px;
-  font-weight:800;
-  text-decoration:none;
-  border:1px solid rgba(255,255,255,.14);
-  backdrop-filter: blur(10px);
-  transition: transform .18s ease, background .18s ease;
-}
-
-.btn-ghost:hover{
-  transform: translateY(-2px);
-  background: rgba(255,255,255,.10);
-}
-
-/* Card system (bright dark) */
-.card{
-  background: var(--card);
-  border:1px solid var(--cardBorder);
-  border-radius:16px;
-  padding:18px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 26px rgba(43,160,255,.10);
-}
-:root{
-  --blueline:#1E90FF;
-  --blueline2:#0A5CFF;
+  --blueline:#1E90FF;         /* bright blueline blue */
+  --blueline2:#0A5CFF;        /* deeper electric blue */
   --black:#05070C;
+  --dark:#070E1B;
+  --dark2:#0A1630;
   --white:#ffffff;
-}
 
-/* Global page base */
-.site-page{
-  background: var(--black);
-  color: var(--white);
-  min-height: 100vh;
-}
+  --panel:rgba(255,255,255,.07);
+  --panelBorder:rgba(255,255,255,.12);
 
-/* Accent divider line */
-.divider{
-  height: 4px;
-  width: 100%;
-  background: linear-gradient(90deg, transparent, var(--blueline), transparent);
-  opacity: .9;
-}
+  --text:#ffffff;
+  --muted:rgba(255,255,255,.84);
+  --ink:#0B0F18;
 
-/* Alternating sections */
-.section-black{
-  background: rgba(0,0,0,.55);
-  color: #fff;
-  padding: 44px 0;
-}
+  --max:1120px;
 
-.section-white{
-  background: rgba(255,255,255,.96);
-  color: #0B0F18;
-  padding: 44px 0;
-}
-
-.section-white h1,
-.section-white h2,
-.section-white h3,
-.section-white p,
-.section-white a{
-  color: #0B0F18;
-}
-
-/* Container */
-.wrap{
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Buttons */
-.btn-primary{
-  display:inline-block;
-  padding: 14px 30px;
-  border-radius: 14px;
-  text-decoration:none;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  background: linear-gradient(135deg, var(--blueline2), var(--blueline));
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.15);
-  box-shadow: 0 0 26px rgba(30,144,255,.40);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
-.btn-primary:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 0 44px rgba(30,144,255,.60);
-}
-
-/* HOME ONLY: logo overlay background */
-.home-page{
-  position: relative;
-  overflow: hidden;
-}
-
-.home-page::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:url("assets/img/4E62968F-6A26-4E3D-8AE3-B05EE9B0BB82.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  opacity:.75;
-  z-index:0;
-}
-
-.home-page::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(700px 500px at 50% 35%, rgba(30,144,255,.25), transparent 65%),
-    linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.70) 60%, rgba(0,0,0,.85) 100%);
-  z-index:0;
-}
-
-.home-page > *{ position:relative; z-index:1; }
-
-/* Video styling (home bottom) */
-.video-frame{
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.14);
-  overflow: hidden;
-  box-shadow: 0 0 30px rgba(30,144,255,.18);
-}
-
-.video-frame iframe,
-.video-frame video{
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display:block;
-}
-
-
-/* Mobile: shrink side borders into subtle top/bottom glow */
-@media (max-width: 900px){
-  .page::before, .page::after{ display:none; }
-  .hero{ min-height:70vh; padding-top:70px; }
-}
+  /* floating shoe border config */
+  --sideWidth:260px;          /* make shoes obvious */
+  --sideOpacity:.86;          /* visible */
+  --sideGlow: drop-shadow(0 0 20px rgba(30,144,255,.30));
