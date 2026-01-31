@@ -1,1 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Inventory | Bluelinekicks12</title>
+  <meta name="description" content="Shop Bluelinekicks12 inventory on Whatnot. Under market deals and live shows."/>
+  <link rel="icon" type="image/png" href="assets/img/logo.png"/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-logo"><img src="assets/img/logo.png" alt="Bluelinekicks12 logo"/></span>
+          <span class="brand-text">BLUELINEKICKS12<small>Buy • Sell • Trade</small></span>
+        </a>
 
+        <nav id="navlinks" class="nav-links">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="inventory.html">Inventory</a>
+          <a data-nav href="sell.html">Sell Us Your Shoes</a>
+          <a data-nav href="about.html">About</a>
+          <a data-nav href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn primary" href="inventory.html">Shop Whatnot</a>
+          <a class="btn" href="sell.html">Get an Offer</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+
+        <div class="card">
+          <div class="kicker">Inventory</div>
+          <h1 class="h1">Shop Bluelinekicks12 on Whatnot</h1>
+          <p class="lead">
+            Whatnot doesn’t always allow embedding inside websites. So we do it the reliable way:
+            one click opens our live inventory in a new tab.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://www.whatnot.com/user/bluelinekicks12" target="_blank" rel="noopener">Open Whatnot Inventory</a>
+            <a class="btn" href="sell.html">Sell / Trade</a>
+          </div>
+          <div class="glowline"></div>
+          <p class="note">
+            If you want a specific “Show Schedule” section, tell me your usual show days/times and I’ll add it here.
+          </p>
+        </div>
+
+        <div class="section">
+          <div class="grid">
+            <div class="span-12 banner">
+              <img src="assets/img/under-market.png" alt="Under Market banner"/>
+            </div>
+
+            <div class="span-12 card">
+              <h2>Optional embed (may not work in all browsers)</h2>
+              <p class="note">
+                If the frame shows blank or won’t load, that’s Whatnot blocking iframe embeds. Use the button above.
+              </p>
+              <div class="embed">
+                <iframe
+                  title="Bluelinekicks12 Whatnot"
+                  src="https://www.whatnot.com/user/bluelinekicks12"
+                  style="width:100%;height:720px;border:0"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="span-12 banner">
+              <img src="assets/img/heat-next.png" alt="Heat coming up next banner"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="badge">© <span id="year"></span> Bluelinekicks12</div>
+          <div class="note" style="margin-top:10px;max-width:520px">
+            Built for sneakerheads who want real heat and real prices.
+          </div>
+        </div>
+        <div>
+          <div style="font-weight:900;margin-bottom:8px">Links</div>
+          <div class="note"><a href="inventory.html">Inventory</a></div>
+          <div class="note"><a href="sell.html">Sell Us Your Shoes</a></div>
+          <div class="note"><a href="contact.html">Contact</a></div>
+          <div class="note" style="margin-top:10px">
+            Whatnot: <a href="https://www.whatnot.com/user/bluelinekicks12" target="_blank" rel="noopener">bluelinekicks12</a>
+          </div>
+        </div>
+      </div>
+      <div class="glowline"></div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/site.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
