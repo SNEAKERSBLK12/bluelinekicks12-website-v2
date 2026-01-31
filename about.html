@@ -1,1 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>About | Bluelinekicks12</title>
+  <meta name="description" content="Learn about Bluelinekicks12 — under market sneaker deals, fast offers, and culture-first service."/>
+  <link rel="icon" type="image/png" href="assets/img/logo.png"/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-logo"><img src="assets/img/logo.png" alt="Bluelinekicks12 logo"/></span>
+          <span class="brand-text">BLUELINEKICKS12<small>Buy • Sell • Trade</small></span>
+        </a>
 
+        <nav id="navlinks" class="nav-links">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="inventory.html">Inventory</a>
+          <a data-nav href="sell.html">Sell Us Your Shoes</a>
+          <a data-nav href="about.html">About</a>
+          <a data-nav href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn primary" href="inventory.html">Shop Whatnot</a>
+          <a class="btn" href="sell.html">Get an Offer</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card">
+            <div class="kicker">About Bluelinekicks12</div>
+            <h1 class="h1">Real pairs. Real prices. Real respect.</h1>
+            <p class="lead">
+              Bluelinekicks12 is built for sneakerheads who want fair deals and fast answers.
+              We keep it culture-first and customer-first.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="inventory.html">Shop Inventory</a>
+              <a class="btn" href="sell.html">Sell / Trade</a>
+            </div>
+          </div>
+
+          <div class="card" style="padding:0;overflow:hidden">
+            <img src="assets/img/logo-collage.png" alt="Bluelinekicks12 brand collage"/>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="grid">
+            <div class="span-6 card">
+              <h2>What we do</h2>
+              <p class="note">
+                We buy, sell, and trade sneakers — and we do it the right way:
+                clear communication, fair pricing, and fast turnaround.
+              </p>
+              <div class="hr"></div>
+              <div class="note"><strong>Authenticity:</strong> We take it seriously.</div>
+              <div class="note"><strong>Condition:</strong> We call it like it is.</div>
+              <div class="note"><strong>Speed:</strong> Quick offers and quick responses.</div>
+            </div>
+
+            <div class="span-6 card">
+              <h2>Where to shop</h2>
+              <p class="note">
+                Our main inventory is hosted on Whatnot. New heat drops during live shows.
+              </p>
+              <div class="hero-actions">
+                <a class="btn primary" href="https://www.whatnot.com/user/bluelinekicks12" target="_blank" rel="noopener">Open Whatnot</a>
+                <a class="btn" href="contact.html">Contact</a>
+              </div>
+              <div class="glowline"></div>
+              <p class="note">
+                Want your Facebook + Instagram linked here? Send the links and I’ll lock them in.
+              </p>
+            </div>
+
+            <div class="span-12 banner">
+              <img src="assets/img/heat-next.png" alt="Heat coming up next banner"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="badge">© <span id="year"></span> Bluelinekicks12</div>
+          <div class="note" style="margin-top:10px;max-width:520px">
+            Built for sneakerheads who want real heat and real prices.
+          </div>
+        </div>
+        <div>
+          <div style="font-weight:900;margin-bottom:8px">Links</div>
+          <div class="note"><a href="inventory.html">Inventory</a></div>
+          <div class="note"><a href="sell.html">Sell Us Your Shoes</a></div>
+          <div class="note"><a href="contact.html">Contact</a></div>
+        </div>
+      </div>
+      <div class="glowline"></div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/site.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
