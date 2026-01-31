@@ -1,3 +1,5 @@
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -6,5 +8,181 @@
   <link rel="icon" type="image/png" href="assets/img/logo.png"/>
   <link rel="stylesheet" href="assets/styles.css"/>
 </head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-logo"><img src="assets/img/logo.png" alt="Bluelinekicks12 logo"/></span>
+          <span class="brand-text">BLUELINEKICKS12<small>Buy • Sell • Trade</small></span>
+        </a>
+
+        <nav id="navlinks" class="nav-links">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="inventory.html">Inventory</a>
+          <a data-nav href="sell.html">Sell Us Your Shoes</a>
+          <a data-nav href="about.html">About</a>
+          <a data-nav href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn primary" href="inventory.html">Shop Whatnot</a>
+          <a class="btn" href="sell.html">Get an Offer</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card">
+            <div class="kicker">Fast offers • No games</div>
+            <h1 class="h1">Sell us your shoes</h1>
+            <p class="lead">
+              Use the quick estimator to get a ballpark range, then send details + photos for a real offer.
+            </p>
+            <div class="pills">
+              <span class="pill">Cash offers</span>
+              <span class="pill">Trade options</span>
+              <span class="pill">Quick response</span>
+            </div>
+          </div>
+
+          <div class="card" style="padding:0;overflow:hidden">
+            <img src="assets/img/thank-you.png" alt="Bluelinekicks12 community"/>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="grid">
+            <!-- LEFT: ESTIMATOR -->
+            <div class="span-6 card">
+              <h2>Value your shoes (estimate)</h2>
+              <p class="note">Estimate only — final offer depends on photos, authenticity, and current demand.</p>
+
+              <form id="valueForm">
+                <label for="brand">Brand</label>
+                <select id="brand" class="input" required>
+                  <option>Jordan</option>
+                  <option>Nike</option>
+                  <option>Adidas</option>
+                  <option>New Balance</option>
+                  <option>Yeezy</option>
+                  <option>Other</option>
+                </select>
+
+                <label for="type">Type</label>
+                <select id="type" class="input" required>
+                  <option>Retro / Classic</option>
+                  <option>Performance (running/bball)</option>
+                  <option>Designer / Collab</option>
+                  <option>Slides / Sandals</option>
+                </select>
+
+                <label for="condition">Condition</label>
+                <select id="condition" class="input" required>
+                  <option>Deadstock (New)</option>
+                  <option>Like New</option>
+                  <option>Gently Used</option>
+                  <option>Used</option>
+                  <option>Heavily Worn</option>
+                </select>
+
+                <label for="box">Original box?</label>
+                <select id="box" class="input" required>
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+
+                <label for="hype">Demand level</label>
+                <select id="hype" class="input" required>
+                  <option>Standard</option>
+                  <option>High Demand</option>
+                  <option>Grailed / Rare</option>
+                </select>
+
+                <div class="form-actions">
+                  <button class="btn primary" type="submit">Get Estimate</button>
+                  <a class="btn" href="#sellLead">Send Photos</a>
+                </div>
+              </form>
+
+              <div id="valueOutput" style="margin-top:12px"></div>
+            </div>
+
+            <!-- RIGHT: NETLIFY FORM -->
+            <div id="sellLead" class="span-6 card">
+              <h2>Get a real offer</h2>
+              <p class="note">Fill this out and attach photos. Netlify will collect submissions for free once published.</p>
+
+              <form name="sell-shoes" method="POST" data-netlify="true" enctype="multipart/form-data" data-toast>
+                <input type="hidden" name="form-name" value="sell-shoes"/>
+
+                <label for="name">Name</label>
+                <input id="name" class="input" name="name" required placeholder="Your name"/>
+
+                <label for="email">Email</label>
+                <input id="email" class="input" type="email" name="email" required placeholder="you@email.com"/>
+
+                <label for="instagram">Instagram (optional)</label>
+                <input id="instagram" class="input" name="instagram" placeholder="@yourhandle"/>
+
+                <label for="details">Shoe details</label>
+                <textarea id="details" class="input" name="details" required placeholder="Brand / Model / Size / Condition / Any flaws"></textarea>
+
+                <label for="photos">Upload photos</label>
+                <input id="photos" class="input" type="file" name="photos" accept="image/*" multiple/>
+
+                <div class="form-actions">
+                  <button class="btn danger" type="submit">Request Offer</button>
+                  <a class="btn" href="inventory.html">Shop Instead</a>
+                </div>
+
+                <p class="note" style="margin-top:10px">
+                  Tip: Good lighting photos (toe box, sides, heel, soles, size tag, box label) get faster offers.
+                </p>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="badge">© <span id="year"></span> Bluelinekicks12</div>
+          <div class="note" style="margin-top:10px;max-width:520px">
+            Built for sneakerheads who want real heat and real prices. Authenticity and condition always matter—ask us anything.
+          </div>
+        </div>
+        <div>
+          <div style="font-weight:900;margin-bottom:8px">Links</div>
+          <div class="note"><a href="inventory.html">Inventory (Whatnot)</a></div>
+          <div class="note"><a href="sell.html">Sell Us Your Shoes</a></div>
+          <div class="note"><a href="contact.html">Contact</a></div>
+          <div class="note" style="margin-top:10px">
+            Whatnot: <a href="https://www.whatnot.com/user/bluelinekicks12" target="_blank" rel="noopener">bluelinekicks12</a>
+          </div>
+        </div>
+      </div>
+      <div class="glowline"></div>
+    </div>
+  </footer>
+
+  <!-- Toast UI for small success messages -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/site.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
 
 
