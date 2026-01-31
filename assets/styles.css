@@ -158,6 +158,125 @@ main, header, nav, footer{ position:relative; z-index:1; }
   backdrop-filter: blur(12px);
   box-shadow: 0 0 26px rgba(43,160,255,.10);
 }
+:root{
+  --blueline:#1E90FF;
+  --blueline2:#0A5CFF;
+  --black:#05070C;
+  --white:#ffffff;
+}
+
+/* Global page base */
+.site-page{
+  background: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+/* Accent divider line */
+.divider{
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--blueline), transparent);
+  opacity: .9;
+}
+
+/* Alternating sections */
+.section-black{
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  padding: 44px 0;
+}
+
+.section-white{
+  background: rgba(255,255,255,.96);
+  color: #0B0F18;
+  padding: 44px 0;
+}
+
+.section-white h1,
+.section-white h2,
+.section-white h3,
+.section-white p,
+.section-white a{
+  color: #0B0F18;
+}
+
+/* Container */
+.wrap{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Buttons */
+.btn-primary{
+  display:inline-block;
+  padding: 14px 30px;
+  border-radius: 14px;
+  text-decoration:none;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  background: linear-gradient(135deg, var(--blueline2), var(--blueline));
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 0 26px rgba(30,144,255,.40);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.btn-primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 0 44px rgba(30,144,255,.60);
+}
+
+/* HOME ONLY: logo overlay background */
+.home-page{
+  position: relative;
+  overflow: hidden;
+}
+
+.home-page::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url("assets/img/4E62968F-6A26-4E3D-8AE3-B05EE9B0BB82.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat:no-repeat;
+  opacity:.75;
+  z-index:0;
+}
+
+.home-page::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(700px 500px at 50% 35%, rgba(30,144,255,.25), transparent 65%),
+    linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.70) 60%, rgba(0,0,0,.85) 100%);
+  z-index:0;
+}
+
+.home-page > *{ position:relative; z-index:1; }
+
+/* Video styling (home bottom) */
+.video-frame{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.14);
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(30,144,255,.18);
+}
+
+.video-frame iframe,
+.video-frame video{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display:block;
+}
+
 
 /* Mobile: shrink side borders into subtle top/bottom glow */
 @media (max-width: 900px){
