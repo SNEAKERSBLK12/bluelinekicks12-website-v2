@@ -50,3 +50,27 @@ img{max-width:100%;height:auto}
 .h1{font-size:48px}
 .lead{color:var(--muted)}
 .footer{border-top:1px solid var(--border);padding:20px;margin-top:40px}
+:root{
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-graffiti: "Rubik Spray Paint", system-ui, sans-serif;
+}
+
+body{ font-family: var(--font-body); }
+
+/* Graffiti style for “impact” text only */
+.hero-title,
+.section-title,
+.nav-brand,
+.btn-primary,
+.btn-ghost{
+  font-family: var(--font-graffiti);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* Clean font for readable text */
+.hero-sub,
+p, li, .product-title, .product-meta, .nav a, input, textarea, label{
+  font-family: var(--font-body);
+}
+
