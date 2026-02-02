@@ -4,8 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>BLUELINEKICKS12</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Fallback so the page is NEVER white/broken even if CSS/image paths fail -->
+  <style>
+    html,body{height:100%}
+    body{margin:0;background:#05070C;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+    .topbar{position:sticky;top:0;background:rgba(0,0,0,.6);border-bottom:1px solid rgba(255,255,255,.12)}
+    .topbar-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:48px;height:48px;object-fit:contain}
+    .hero{padding:34px 0 18px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:14px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08)}
+  </style>
+
+  <!-- Your real stylesheet (make sure style.css is in the SAME folder as this index.html) -->
+  <link rel="stylesheet" href="style.css?v=999" />
 </head>
+
 <body>
   <div class="page">
     <div class="shoe-left" aria-hidden="true"></div>
@@ -63,6 +80,7 @@
               <div class="qi-sub">Browse available pairs</div>
             </div>
           </a>
+
           <a class="quick-item" href="sell.html">
             <div class="qi-ico">💱</div>
             <div>
@@ -70,6 +88,7 @@
               <div class="qi-sub">Turn pairs into cash</div>
             </div>
           </a>
+
           <a class="quick-item" href="about.html">
             <div class="qi-ico">✅</div>
             <div>
@@ -87,6 +106,7 @@
             <p class="section-text">Built on trust, quality, and customer experience. If it’s listed, it’s ready.</p>
             <a class="btn btn-white" href="about.html">READ MORE</a>
           </div>
+
           <div class="panel-img">
             <img src="assets/img/about-banner.png" alt="About">
           </div>
@@ -96,19 +116,23 @@
       <section class="section">
         <div class="wrap">
           <h2 class="section-title center">OUR SERVICES</h2>
+
           <div class="service-grid">
             <a class="service-card" href="inventory.html">
               <div class="svc-title">INVENTORY DROPS</div>
               <div class="svc-sub">New pairs, clean photos</div>
             </a>
+
             <a class="service-card" href="sell.html">
               <div class="svc-title">BUY / SELL / TRADE</div>
               <div class="svc-sub">Fast quotes, simple process</div>
             </a>
+
             <a class="service-card" href="about.html">
               <div class="svc-title">AUTHENTICITY</div>
               <div class="svc-sub">Quality-first standards</div>
             </a>
+
             <a class="service-card" href="contact.html">
               <div class="svc-title">SUPPORT</div>
               <div class="svc-sub">Message us anytime</div>
@@ -120,6 +144,7 @@
       <section class="section">
         <div class="wrap">
           <h2 class="section-title center">LATEST DROPS & UPDATES</h2>
+
           <div class="news-grid">
             <article class="news-card">
               <img src="assets/img/news-1.png" alt="Update">
@@ -129,6 +154,7 @@
                 <div class="news-meta">Updated: Today</div>
               </div>
             </article>
+
             <article class="news-card">
               <img src="assets/img/news-2.png" alt="Update">
               <div class="news-body">
@@ -150,7 +176,7 @@
           <h2 class="section-title center">WATCH</h2>
           <div class="video-frame">
             <iframe
-              src="https://www.youtube.com/watch?v=t4fSZLAeKcI
+              src="https://www.youtube.com/embed/https://youtu.be/t4fSZLAeKcI"
               title="BLUELINEKICKS12 Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
@@ -168,6 +194,7 @@
           <a class="ft-link" href="about.html">About</a>
           <a class="ft-link" href="contact.html">Contact</a>
         </div>
+
         <div>
           <div class="ft-title">FOLLOW</div>
           <div class="ft-row">
@@ -176,15 +203,20 @@
             <a class="ft-pill" href="#">TT</a>
           </div>
         </div>
+
         <div>
           <div class="ft-title">CONTACT</div>
           <div class="ft-text">Message us for inventory questions, trades, and shipping.</div>
           <a class="ft-link" href="contact.html">Contact Page</a>
         </div>
       </div>
-      <div class="wrap ft-bottom">© BLUELINEKICKS12 • Built on soles. Raised on the streets.</div>
+
+      <div class="wrap ft-bottom">© <span id="y"></span> BLUELINEKICKS12 • Built on soles. Raised on the streets.</div>
     </footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </div>
 </body>
 </html>
-
