@@ -4,401 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>BLUELINEKICKS12</title>
-
-  <style>
-    :root{
-      --bg:#05070C;
-      --border:rgba(255,255,255,.14);
-      --border2:rgba(255,255,255,.10);
-      --muted:rgba(255,255,255,.84);
-      --max:1120px;
-
-      --sideWidth:240px;
-      --sideOpacity:.85;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color:#fff;
-    }
-
-    a, a:visited{ color: inherit; text-decoration:none; }
-
-    .page{
-      position:relative;
-      min-height:100vh;
-      overflow:hidden;
-      background: var(--bg);
-    }
-
-    /* background overlay image on ALL pages */
-    .page::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.40) 0%, rgba(0,0,0,.76) 60%, rgba(0,0,0,.92) 100%),
-        url("background-overlay.png");
-      background-size: cover;
-      background-position:center;
-      background-repeat:no-repeat;
-      opacity:.75;
-      z-index:0;
-      pointer-events:none;
-    }
-
-    /* floating shoe borders (optional images) */
-    .page::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:1;
-      pointer-events:none;
-      background:
-        linear-gradient(to right,
-          rgba(0,0,0,0) 0%,
-          rgba(0,0,0,0) calc(var(--sideWidth) - 1px),
-          rgba(255,255,255,.00) calc(var(--sideWidth)),
-          rgba(0,0,0,0) calc(100% - var(--sideWidth)),
-          rgba(0,0,0,0) 100%);
-    }
-
-    .shoe-left, .shoe-right{
-      position:fixed;
-      top:0;
-      width:var(--sideWidth);
-      height:100vh;
-      opacity:var(--sideOpacity);
-      pointer-events:none;
-      z-index:1;
-      background-repeat:repeat;
-      background-size:var(--sideWidth) auto;
-      background-position:center top;
-      mix-blend-mode:screen;
-      filter: drop-shadow(0 0 18px rgba(255,255,255,.10));
-      mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-    }
-    .shoe-left{
-      left:0;
-      background-image:url("assets/img/shoes-border-left.png");
-    }
-    .shoe-right{
-      right:0;
-      background-image:url("assets/img/shoes-border-right.png");
-    }
-
-    header, main, footer{ position:relative; z-index:2; }
-
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:0 20px;
-    }
-    @media (min-width:980px){
-      .wrap{
-        padding-left: calc(20px + var(--sideWidth));
-        padding-right: calc(20px + var(--sideWidth));
-      }
-    }
-    @media (max-width:900px){
-      .shoe-left,.shoe-right{ display:none; }
-    }
-
-    /* top nav like the example */
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:10;
-      backdrop-filter: blur(12px);
-      background: linear-gradient(180deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.46) 100%);
-      border-bottom:1px solid var(--border2);
-    }
-    .topbar-inner{
-      height:76px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width: 220px;
-    }
-    .brand img{
-      width:48px; height:48px; object-fit:contain;
-      background: rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:12px;
-      padding:6px;
-    }
-    .brand-name{
-      font-weight:900;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      line-height:1.1;
-    }
-    .brand-tag{
-      font-size:.82rem;
-      color:var(--muted);
-      line-height:1.1;
-    }
-
-    .nav{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-    .nav a{
-      font-weight:800;
-      font-size:.9rem;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      padding:10px 10px;
-      border-radius:12px;
-      transition:.15s;
-    }
-    .nav a:hover{ background: rgba(255,255,255,.08); transform: translateY(-1px); }
-    .nav a.active{ outline:1px solid rgba(255,255,255,.16); }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 18px;
-      border-radius:14px;
-      font-weight:900;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      border:1px solid rgba(255,255,255,.16);
-      transition:.15s;
-      white-space:nowrap;
-    }
-    .btn:hover{ transform: translateY(-2px); }
-    .btn-solid{ background: rgba(255,255,255,.92); color:#0B0F18; }
-    .btn-outline{ background: rgba(0,0,0,.30); color:#fff; backdrop-filter: blur(10px); }
-
-    /* hero like the example */
-    .hero{
-      padding:34px 0 18px;
-    }
-    .hero-inner{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:18px;
-      align-items:center;
-    }
-    .hero-title{
-      margin:0;
-      font-size: clamp(2.2rem, 4.2vw, 4rem);
-      line-height:1.05;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-    }
-    .hero-sub{
-      margin:12px 0 18px;
-      max-width:720px;
-      color:var(--muted);
-      font-size:1.05rem;
-      line-height:1.55;
-    }
-    .hero-actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    .hero-feature{
-      background: rgba(0,0,0,.35);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 18px;
-      overflow:hidden;
-      box-shadow: 0 0 30px rgba(0,0,0,.35);
-    }
-    .hero-feature img{
-      width:100%;
-      height:260px;
-      object-fit:cover;
-      display:block;
-      background: rgba(255,255,255,.06);
-    }
-    .hero-feature-bar{
-      padding:14px;
-      background: rgba(0,0,0,.50);
-      border-top: 1px solid rgba(255,255,255,.10);
-    }
-    .hf-title{
-      font-weight:900;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-    }
-    .hf-sub{
-      margin-top:6px;
-      color:var(--muted);
-      font-size:.95rem;
-    }
-
-    /* quick bar */
-    .quickbar{
-      margin-top:16px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-    }
-    .quick-item{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      background: rgba(0,0,0,.44);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:16px;
-      padding:14px 14px;
-      transition:.15s;
-    }
-    .quick-item:hover{ transform: translateY(-2px); background: rgba(0,0,0,.58); }
-    .qi-ico{ font-size:22px; width:34px; text-align:center; }
-    .qi-title{
-      font-weight:900;
-      letter-spacing:.05em;
-      text-transform:uppercase;
-      font-size:.95rem;
-    }
-    .qi-sub{ color:var(--muted); font-size:.9rem; margin-top:2px; }
-
-    .section{
-      padding:26px 0;
-      background: rgba(0,0,0,.48);
-      border-top:1px solid rgba(255,255,255,.06);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .section-title{
-      margin:0 0 10px;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-    }
-    .section-text{ margin:0 0 16px; color:var(--muted); line-height:1.55; }
-    .center{ text-align:center; }
-
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:16px;
-      align-items:center;
-    }
-    .panel-img{
-      border-radius:18px;
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.35);
-    }
-    .panel-img img{
-      width:100%;
-      height:260px;
-      object-fit:cover;
-      display:block;
-      background: rgba(255,255,255,.06);
-    }
-
-    .service-grid{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:12px;
-      margin-top:14px;
-    }
-    .service-card{
-      background: rgba(0,0,0,.44);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:16px;
-      padding:16px;
-      transition:.15s;
-    }
-    .service-card:hover{ transform: translateY(-2px); background: rgba(0,0,0,.58); }
-    .svc-title{ margin-top:10px; font-weight:900; text-transform:uppercase; letter-spacing:.05em; }
-    .svc-sub{ margin-top:6px; color:var(--muted); font-size:.95rem; line-height:1.45; }
-
-    .news-grid{
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap:12px;
-      margin-top:14px;
-    }
-    .news-card{
-      background: rgba(0,0,0,.44);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:16px;
-      overflow:hidden;
-    }
-    .news-card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      display:block;
-      background: rgba(255,255,255,.06);
-    }
-    .news-body{ padding:14px; }
-    .news-title{ font-weight:900; text-transform:uppercase; letter-spacing:.05em; }
-    .news-sub{ margin-top:6px; color:var(--muted); line-height:1.45; }
-    .news-meta{ margin-top:10px; font-size:.9rem; color: rgba(255,255,255,.70); }
-
-    .video-frame{
-      margin-top:14px;
-      width:100%;
-      aspect-ratio:16/9;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.45);
-    }
-    .video-frame iframe{ width:100%; height:100%; border:0; display:block; }
-
-    .footer{
-      border-top:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.58);
-      backdrop-filter: blur(10px);
-      margin-top: 8px;
-    }
-    .footer-grid{
-      padding:26px 0;
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:14px;
-    }
-    .ft-title{ font-weight:900; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
-    .ft-link{ display:block; color: rgba(255,255,255,.85); margin: 8px 0; font-weight:700; }
-    .ft-text{ color: rgba(255,255,255,.80); line-height:1.45; }
-    .ft-row{ display:flex; gap:10px; }
-    .ft-pill{
-      width:42px; height:36px;
-      display:inline-flex; align-items:center; justify-content:center;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.08);
-      font-weight:900;
-    }
-    .ft-bottom{
-      padding:12px 0 18px;
-      color: rgba(255,255,255,.70);
-      text-align:center;
-      border-top:1px solid rgba(255,255,255,.10);
-    }
-
-    @media (max-width:980px){
-      .nav{ display:none; }
-      .hero-inner{ grid-template-columns: 1fr; }
-      .quickbar{ grid-template-columns: 1fr; }
-      .split{ grid-template-columns: 1fr; }
-      .service-grid{ grid-template-columns: 1fr 1fr; }
-      .news-grid{ grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <div class="page">
     <div class="shoe-left" aria-hidden="true"></div>
@@ -422,7 +29,7 @@
           <a href="contact.html">CONTACT</a>
         </nav>
 
-        <a class="btn btn-solid" href="inventory.html">SHOP NOW</a>
+        <a class="btn btn-blue" href="inventory.html">SHOP NOW</a>
       </div>
     </header>
 
@@ -432,9 +39,10 @@
           <div>
             <h1 class="hero-title">DEDICATED TO YOUR HEAT</h1>
             <p class="hero-sub">Blue-themed sneakers, fast shipping, clean service. No games.</p>
+
             <div class="hero-actions">
-              <a class="btn btn-solid" href="inventory.html">SHOP INVENTORY</a>
-              <a class="btn btn-outline" href="sell.html">SELL / TRADE</a>
+              <a class="btn btn-blue" href="inventory.html">SHOP INVENTORY</a>
+              <a class="btn btn-ghost" href="sell.html">SELL / TRADE</a>
             </div>
           </div>
 
@@ -477,7 +85,7 @@
           <div>
             <h2 class="section-title">ABOUT BLUELINEKICKS12</h2>
             <p class="section-text">Built on trust, quality, and customer experience. If it’s listed, it’s ready.</p>
-            <a class="btn btn-solid" href="about.html">READ MORE</a>
+            <a class="btn btn-white" href="about.html">READ MORE</a>
           </div>
           <div class="panel-img">
             <img src="assets/img/about-banner.png" alt="About">
@@ -516,7 +124,7 @@
             <article class="news-card">
               <img src="assets/img/news-1.png" alt="Update">
               <div class="news-body">
-                <div class="news-title">NEW BLUE HEAT ADDED</div>
+                <div class="news-title">NEW HEAT ADDED</div>
                 <div class="news-sub">Fresh inventory — first come, first served.</div>
                 <div class="news-meta">Updated: Today</div>
               </div>
@@ -530,8 +138,9 @@
               </div>
             </article>
           </div>
+
           <div class="center" style="margin-top:16px;">
-            <a class="btn btn-solid" href="inventory.html">VIEW ALL INVENTORY</a>
+            <a class="btn btn-blue" href="inventory.html">VIEW ALL INVENTORY</a>
           </div>
         </div>
       </section>
@@ -541,7 +150,7 @@
           <h2 class="section-title center">WATCH</h2>
           <div class="video-frame">
             <iframe
-              src="https://youtu.be/t4fSZLAeKcI"
+              src="https://www.youtube.com/watch?v=t4fSZLAeKcI
               title="BLUELINEKICKS12 Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
@@ -578,3 +187,4 @@
   </div>
 </body>
 </html>
+
