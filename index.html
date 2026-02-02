@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,14 +11,17 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="page">
-    <div class="bg-overlay"></div>
+    <div class="bg-overlay" aria-hidden="true"></div>
+    <div class="shoe-borders" aria-hidden="true"></div>
 
     <header class="topbar">
       <div class="wrap topbar-inner">
         <a class="brand" href="index.html">
-          <img src="assets/img/blueline-logo.png" alt="BLUELINEKICKS12" />
+          <!-- Replace with your logo file -->
+          <img src="assets/img/blueline-logo.png" alt="BLUELINEKICKS12">
           <div class="brand-text">
             <div class="brand-name">BLUELINEKICKS12</div>
             <div class="brand-tag">Built on soles. Raised on the streets.</div>
@@ -35,7 +37,7 @@
         </nav>
 
         <div class="top-actions">
-          <a class="btn btn-outline" href="inventory.html">SHOP NOW</a>
+          <a class="btn btn-solid" href="inventory.html">SHOP NOW</a>
         </div>
       </div>
     </header>
@@ -48,141 +50,142 @@
             <h1 class="hero-title">DEDICATED TO YOUR HEAT</h1>
             <p class="hero-sub">Blue-themed sneakers, fast shipping, clean service. No games.</p>
 
-            <div class="hero-buttons">
+            <!-- “Original layout” style: two buttons side-by-side -->
+            <div class="hero-actions">
               <a class="btn btn-solid" href="inventory.html">SHOP INVENTORY</a>
               <a class="btn btn-outline" href="sell.html">SELL / TRADE</a>
             </div>
           </div>
 
           <div class="hero-right">
-            <!-- Swap this image if you want a hero photo, otherwise keep your background overlay doing the work -->
-            <div class="hero-card">
-              <img src="assets/img/hero-feature.png" alt="Featured Sneaker" />
-              <div class="hero-card-text">
-                <div class="hero-card-title">FEATURED DROP</div>
-                <div class="hero-card-sub">Fresh pairs added regularly.</div>
+            <div class="hero-feature">
+              <img src="assets/img/hero-feature.png" alt="Featured" />
+              <div class="hero-feature-bar">
+                <div class="hf-title">FEATURED DROP</div>
+                <div class="hf-sub">Fresh pairs added regularly.</div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- QUICK ACTION BAR -->
+        <!-- QUICK BAR (3 items like the example) -->
         <div class="wrap quickbar">
           <a class="quick-item" href="inventory.html">
-            <div class="quick-ico">🧾</div>
-            <div class="quick-txt">
-              <div class="quick-title">SHOP INVENTORY</div>
-              <div class="quick-sub">Browse available pairs</div>
+            <div class="qi-ico">🧾</div>
+            <div class="qi-text">
+              <div class="qi-title">SHOP INVENTORY</div>
+              <div class="qi-sub">Browse available pairs</div>
             </div>
           </a>
 
           <a class="quick-item" href="sell.html">
-            <div class="quick-ico">💱</div>
-            <div class="quick-txt">
-              <div class="quick-title">SELL / TRADE</div>
-              <div class="quick-sub">Turn shoes into cash</div>
+            <div class="qi-ico">💱</div>
+            <div class="qi-text">
+              <div class="qi-title">SELL / TRADE</div>
+              <div class="qi-sub">Turn pairs into cash</div>
             </div>
           </a>
 
           <a class="quick-item" href="about.html">
-            <div class="quick-ico">✅</div>
-            <div class="quick-txt">
-              <div class="quick-title">AUTHENTICITY</div>
-              <div class="quick-sub">Quality-first standards</div>
+            <div class="qi-ico">✅</div>
+            <div class="qi-text">
+              <div class="qi-title">QUALITY FIRST</div>
+              <div class="qi-sub">Clear condition listings</div>
             </div>
           </a>
         </div>
       </section>
 
-      <!-- ABOUT -->
-      <section class="split">
-        <div class="wrap split-inner">
+      <!-- ABOUT SPLIT -->
+      <section class="section section-dark">
+        <div class="wrap split">
           <div class="split-left">
             <h2 class="section-title">ABOUT BLUELINEKICKS12</h2>
-            <p class="section-sub">
-              We’re built on trust, quality, and customer experience. If it’s listed, it’s ready.
+            <p class="section-text">
+              Built on trust, quality, and customer experience. If it’s listed, it’s ready.
             </p>
             <a class="btn btn-solid" href="about.html">READ MORE</a>
           </div>
 
           <div class="split-right">
-            <div class="image-panel">
-              <img src="assets/img/about-banner.png" alt="BluelineKicks12" />
+            <div class="panel-img">
+              <img src="assets/img/about-banner.png" alt="About" />
             </div>
           </div>
         </div>
       </section>
 
       <!-- SERVICES -->
-      <section class="services">
+      <section class="section section-darker">
         <div class="wrap">
           <h2 class="section-title center">OUR SERVICES</h2>
 
           <div class="service-grid">
             <a class="service-card" href="inventory.html">
-              <div class="service-ico">👟</div>
-              <div class="service-title">INVENTORY DROPS</div>
-              <div class="service-sub">New pairs, clean photos, real info</div>
+              <div class="svc-ico">👟</div>
+              <div class="svc-title">INVENTORY DROPS</div>
+              <div class="svc-sub">New pairs, clean photos</div>
             </a>
 
             <a class="service-card" href="sell.html">
-              <div class="service-ico">💵</div>
-              <div class="service-title">BUY / SELL / TRADE</div>
-              <div class="service-sub">Fast quotes, simple process</div>
+              <div class="svc-ico">💵</div>
+              <div class="svc-title">BUY / SELL / TRADE</div>
+              <div class="svc-sub">Fast quotes, simple process</div>
             </a>
 
             <a class="service-card" href="about.html">
-              <div class="service-ico">🛡️</div>
-              <div class="service-title">QUALITY STANDARDS</div>
-              <div class="service-sub">Condition listed clearly</div>
+              <div class="svc-ico">🛡️</div>
+              <div class="svc-title">AUTHENTICITY</div>
+              <div class="svc-sub">Quality-first standards</div>
             </a>
 
             <a class="service-card" href="contact.html">
-              <div class="service-ico">📨</div>
-              <div class="service-title">CUSTOMER SUPPORT</div>
-              <div class="service-sub">Message us anytime</div>
+              <div class="svc-ico">📨</div>
+              <div class="svc-title">SUPPORT</div>
+              <div class="svc-sub">Message us anytime</div>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- LATEST DROPS / UPDATES -->
-      <section class="news">
+      <!-- UPDATES / NEWS -->
+      <section class="section section-dark">
         <div class="wrap">
           <h2 class="section-title center">LATEST DROPS & UPDATES</h2>
 
           <div class="news-grid">
             <article class="news-card">
-              <img src="assets/img/news-1.png" alt="Drop" />
+              <img src="assets/img/news-1.png" alt="Update 1">
               <div class="news-body">
-                <div class="news-title">New Blue Heat Added</div>
-                <div class="news-sub">Fresh inventory—first come, first served.</div>
+                <div class="news-title">NEW BLUE HEAT ADDED</div>
+                <div class="news-sub">Fresh inventory — first come, first served.</div>
                 <div class="news-meta">Updated: Today</div>
               </div>
             </article>
 
             <article class="news-card">
-              <img src="assets/img/news-2.png" alt="Update" />
+              <img src="assets/img/news-2.png" alt="Update 2">
               <div class="news-body">
-                <div class="news-title">Sell / Trade Open</div>
+                <div class="news-title">SELL / TRADE OPEN</div>
                 <div class="news-sub">Got pairs sitting? Turn them into money.</div>
                 <div class="news-meta">Updated: This week</div>
               </div>
             </article>
           </div>
 
-          <div class="center" style="margin-top:18px;">
+          <div class="center" style="margin-top:16px;">
             <a class="btn btn-solid" href="inventory.html">VIEW ALL INVENTORY</a>
           </div>
         </div>
       </section>
 
-      <!-- VIDEO (BOTTOM OF HOME) -->
-      <section class="video">
+      <!-- VIDEO -->
+      <section class="section section-darker">
         <div class="wrap">
           <h2 class="section-title center">WATCH</h2>
           <div class="video-frame">
-https://youtu.be/t4fSZLAeKcI            <iframe
+            <!-- Replace VIDEO_ID_HERE with your YouTube ID -->
+            <iframe
               src="https://www.youtube.com/embed/VIDEO_ID_HERE"
               title="BLUELINEKICKS12 Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -193,43 +196,39 @@ https://youtu.be/t4fSZLAeKcI            <iframe
     </main>
 
     <footer class="footer">
-      <div class="wrap footer-inner">
+      <div class="wrap footer-grid">
         <div>
-          <div class="footer-title">QUICK LINKS</div>
-          <a class="footer-link" href="inventory.html">Shop</a>
-          <a class="footer-link" href="sell.html">Sell / Trade</a>
-          <a class="footer-link" href="about.html">About</a>
-          <a class="footer-link" href="contact.html">Contact</a>
+          <div class="ft-title">QUICK LINKS</div>
+          <a class="ft-link" href="inventory.html">Shop</a>
+          <a class="ft-link" href="sell.html">Sell / Trade</a>
+          <a class="ft-link" href="about.html">About</a>
+          <a class="ft-link" href="contact.html">Contact</a>
         </div>
 
         <div>
-          <div class="footer-title">FOLLOW</div>
-          <div class="footer-row">
-            <a class="footer-pill" href="#" aria-label="Instagram">IG</a>
-            <a class="footer-pill" href="#" aria-label="Facebook">FB</a>
-            <a class="footer-pill" href="#" aria-label="TikTok">TT</a>
+          <div class="ft-title">FOLLOW</div>
+          <div class="ft-row">
+            <a class="ft-pill" href="#" aria-label="Instagram">IG</a>
+            <a class="ft-pill" href="#" aria-label="Facebook">FB</a>
+            <a class="ft-pill" href="#" aria-label="TikTok">TT</a>
           </div>
         </div>
 
         <div>
-          <div class="footer-title">CONTACT</div>
-          <div class="footer-text">Message us for inventory questions, trades, and shipping.</div>
-          <a class="footer-link" href="contact.html">Contact Page</a>
+          <div class="ft-title">CONTACT</div>
+          <div class="ft-text">Message us for inventory questions, trades, and shipping.</div>
+          <a class="ft-link" href="contact.html">Contact Page</a>
         </div>
       </div>
 
-      <div class="wrap footer-bottom">
+      <div class="wrap ft-bottom">
         © <span id="y"></span> BLUELINEKICKS12 • Built on soles. Raised on the streets.
       </div>
     </footer>
-  </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </div>
 </body>
 </html>
-
-  
-        
- 
